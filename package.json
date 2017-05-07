@@ -1,0 +1,8 @@
+{
+  "name": "MongoDB-Git-Repository",
+  "version": "0.0.1",
+  "dependencies": {
+    "mongodb": "^2.2.26",
+    "underscore": "^1.8.3"
+  }
+}
