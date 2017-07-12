@@ -11,13 +11,8 @@
 			"zipcode" : "10462"
 		},
 		"borough" : "Bronx",
-		"cuisine" : "Bakery",
+		"cuisine" : "Baker",
 		"grades" : [
-			{
-				"date" : ISODate("2014-03-03T00:00:00Z"),
-				"grade" : "A",
-				"score" : 2
-			},
 			{
 				"date" : ISODate("2013-09-11T00:00:00Z"),
 				"grade" : "A",
@@ -396,7 +391,7 @@
 				"score" : 8
 			}
 		],
-		"name" : "Taste The Tropics Ice Cream",
+		"name" : "Taste The Foobar Ice Cream",
 		"restaurant_id" : "40356731"
 	},
 	{
