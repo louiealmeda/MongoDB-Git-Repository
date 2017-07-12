@@ -4,5 +4,8 @@
   "dependencies": {
     "mongodb": "^2.2.26",
     "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "stat": "node stat.js"
   }
 }
