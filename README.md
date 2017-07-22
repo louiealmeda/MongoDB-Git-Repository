@@ -55,7 +55,7 @@ if group is not specified, it will use what is indicated in `collections`
 }
 ```
 
-### License
+## License
 
 Copyright (c) 2017 Mark Louie Almeda
 
