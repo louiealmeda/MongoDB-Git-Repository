@@ -13,7 +13,8 @@ Source codes are versioned for the team to collaborate easily and safely. Databa
 
 
 ## How to use
-Since automatic dump and restore is not yet supported, you can run the commands yourself
+Since automatic dump and restore is not yet supported, you can run the commands yourself.
+> make sure you `run as administrator` (windows) or with `sudo` (unix)
 
 ### dump collections
 ```shell
