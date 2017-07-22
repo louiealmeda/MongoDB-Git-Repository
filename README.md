@@ -30,7 +30,8 @@ node restore
 ```shell
 use --group <name>
 ```
-you can specify groups in the `config.js`\n
+you can specify groups in the `config.js`
+
 if group is not specified, it will use what is indicated in `collections` 
 ## Configuration
 
