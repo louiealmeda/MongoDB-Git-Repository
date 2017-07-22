@@ -1,5 +1,6 @@
 var fs = require('fs');
 var spawn = require( 'child_process' ).spawnSync;
+var colors = require('colors');
 
 var config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 
@@ -17,7 +18,7 @@ module.exports = {
     ret = ret.replace(/^([\s\S]+?)\[/, '[');
 
     if (ret.indexOf('[thread1] Failed to connect to ') === 0){
-      console.warn('Cannot connect to database');
+      console.warn('Cannot connect to database'.red);
       throw original;
     }
 

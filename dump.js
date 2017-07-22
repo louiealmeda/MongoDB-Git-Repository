@@ -1,11 +1,15 @@
 'use strict';
+var colors = require('colors');
 
 var fs = require('fs');
 var _ = require('underscore');
 var db = require('./connection');
 var groups = require('./groupManager');
+const argv = require('yargs').argv;
 
-_.each(groups.get(), function (collection) {
+
+console.log('Dumping...'.blue);
+_.each(groups.get(argv.group), function (collection) {
 
     dump(collection);
 
@@ -23,7 +27,7 @@ function dump(collection){
             return console.log(err);
         }
 
-        console.log("dumped " + collection + " at " + new Date());
+        console.log(new Date().toString().gray + (' Dumped ' + collection).green);
     });
 
 }

@@ -4,6 +4,6 @@
   "groups": {
     "all": [],
     "structure": [],
-    "generated": []
+    "generated": ["Account"]
   }
 }

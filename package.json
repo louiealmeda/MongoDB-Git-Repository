@@ -2,8 +2,10 @@
   "name": "MongoDB-Git-Repository",
   "version": "0.0.1",
   "dependencies": {
+    "colors": "^1.1.2",
     "mongodb": "^2.2.26",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "yargs": "^8.0.2"
   },
   "scripts": {
     "stat": "node stat.js"

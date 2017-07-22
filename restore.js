@@ -1,12 +1,13 @@
 'use strict';
-
+var colors = require('colors');
 var fs = require('fs');
 var _ = require('underscore');
 var db = require('./connection');
 var groups = require('./groupManager');
+const argv = require('yargs').argv;
 
-
-_.each(groups.get(), function (collection) {
+console.log('Restoring...'.blue);
+_.each(groups.get(argv.group), function (collection) {
 
     dump(collection);
 
@@ -18,7 +19,7 @@ function dump(collection){
 
     var result = db.execute("db."+collection+".remove({});" + "db."+collection+".insertMany("+content+")");
 
-    console.log(new Date() + ': Restored ' + collection);
+    console.log(new Date().toString().gray + (' Restored ' + collection).cyan);
 
 }
 
