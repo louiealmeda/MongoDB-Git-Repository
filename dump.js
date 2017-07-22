@@ -3,11 +3,9 @@
 var fs = require('fs');
 var _ = require('underscore');
 var db = require('./connection');
+var groups = require('./groupManager');
 
-
-var config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
-
-_.each(config.collections, function (collection) {
+_.each(groups.get(), function (collection) {
 
     dump(collection);
 
@@ -18,15 +16,14 @@ function dump(collection){
     var query = "printjson( db."+collection+".find().sort({_id: 1}).toArray() )";
     var result = db.execute(query);
 
-    result = result.replace(/^([\s\S]+?)\[/, '[');
-    var filename = './collections/' + collection + ".json";
+    var filename = './collections/' + collection + ".js";
 
     fs.writeFile(filename, result, function(err) {
         if(err) {
             return console.log(err);
         }
 
-        console.log(new Date(), collection + " done");
+        console.log("dumped " + collection + " at " + new Date());
     });
 
 }
