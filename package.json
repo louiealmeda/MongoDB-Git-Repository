@@ -1,6 +1,10 @@
 {
-  "name": "MongoDB-Git-Repository",
-  "version": "0.0.1",
+  "name": "mongodb-git-repository",
+  "version": "0.0.2",
+  "author": "Louie Almeda (https://github.com/louiealmeda)",
+  "keywords": ["mongodb", "repository", "versioning", "collections", "git", "version", "mongo", "database"],
+  "homepage": "https://github.com/louiealmeda/MongoDB-Git-Repository",
+  "license": "ISC",
   "dependencies": {
     "colors": "^1.1.2",
     "mongodb": "^2.2.26",
@@ -8,6 +12,7 @@
     "yargs": "^8.0.2"
   },
   "scripts": {
-    "stat": "node stat.js"
+    "dump": "node dump.js",
+    "restore": "node restore.js"
   }
 }
