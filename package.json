@@ -1,9 +1,9 @@
 {
-  "name": "mongodb-git-repository",
-  "version": "0.0.2",
+  "name": "mongovc",
+  "version": "0.0.1",
   "author": "Louie Almeda (https://github.com/louiealmeda)",
   "keywords": ["mongodb", "repository", "versioning", "collections", "git", "version", "mongo", "database"],
-  "homepage": "https://github.com/louiealmeda/MongoDB-Git-Repository",
+  "homepage": "https://github.com/louiealmeda/mongovc",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.1.2",
