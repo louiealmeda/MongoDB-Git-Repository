@@ -10,7 +10,7 @@ function restoreCollections(argv) {
     console.log('Restoring...'.blue);
   _.each(groups.get(argv.restore), function (collection) {
 
-    dump(collection);
+    restore(collection);
 
   });
 
