@@ -1,12 +1,12 @@
-# mongovc
-npm module for mongodb collection version control support Edit
+# mongovc (mongo Version Control)
+node module for mongodb collection version control support
 
 Source codes are versioned for the team to collaborate easily and safely. Databases needs to be given the same collaboration procedure as business logic has been increasingly dependent on data. A lot of teams dump, restore and merge their versions of databases manually. Which leads to changes not being applied and causes unexpected behaviours.
 
 ### Features
 - [x] Dump MongoDB collections as a readable files
 - [x] Restore MongoDB collections from files
-- [ ] Create collection groups to specify which collections should be dump or restored 
+- [x] Create collection groups to specify which collections should be dump or restored 
 - [ ] Automatically dump collections on `stat` of git 
 - [ ] Automatically dump collections on before `pull` of git to check for conflicts
 - [ ] Automatically restore collections after pull if there are no conflicts
@@ -20,7 +20,6 @@ npm install mongovc -g
 
 ## How to use
 Since automatic dump and restore is not yet supported, you can run the commands yourself.
-> make sure you `run as administrator` (windows) or with `sudo` (unix)
 
 ### dump collections
 ```shell
@@ -41,6 +40,13 @@ mongovc --dump <group name>
 you can specify groups in the `mongovc.config.js`
 
 if group is not specified, it will use what is indicated in `collections` 
+
+### Help
+show everything you can do with mongovc
+```
+mongovc --help
+```
+
 ## Configuration
 
 ```javascript
