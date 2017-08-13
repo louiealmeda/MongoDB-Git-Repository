@@ -1,9 +1,0 @@
-{
-  "database": "Test",
-  "collections": ["Account", "Manila"],
-  "groups": {
-    "all": [],
-    "structure": [],
-    "generated": ["Account"]
-  }
-}

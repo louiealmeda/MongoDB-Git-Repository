@@ -1,14 +1,22 @@
 'use strict';
 var colors = require('colors');
 var fs = require('fs');
-var _ = require('underscore');
+var _ = require('lodash');
 var db = require('./connection');
 var groups = require('./groupManager');
+var config = require('./config');
 
 function restoreCollections(argv) {
-
-    console.log('Restoring...'.blue);
-  _.each(groups.get(argv.restore), function (collection) {
+  
+  var collections = groups.get(argv.restore);
+  
+  if (!collections)
+    return;
+  
+  db = db.connect();
+  
+  console.log('Restoring...'.blue);
+  _.each(collections, function (collection) {
 
     restore(collection);
 
@@ -19,7 +27,14 @@ function restoreCollections(argv) {
 
 function restore(collection){
 
-    var content = fs.readFileSync('./collections/' + collection + ".js",'utf8');
+  	var file = config.dumpPath + collection + ".js";
+  
+  	if(!fs.existsSync(file)){
+  	  console.log(new Date().toString().gray + (' Skipped restoring ' + collection + '. collection not found').red);
+  	  return;
+	}
+  	
+    var content = fs.readFileSync(file,'utf8');
 
     var result = db.execute("db."+collection+".remove({});" + "db."+collection+".insertMany("+content+")");
 

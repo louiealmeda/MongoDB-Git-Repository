@@ -10,6 +10,7 @@ Source codes are versioned for the team to collaborate easily and safely. Databa
 - [ ] Automatically dump collections on `stat` of git 
 - [ ] Automatically dump collections on before `pull` of git to check for conflicts
 - [ ] Automatically restore collections after pull if there are no conflicts
+- [ ] Connect with Authentication
 
 ## Install
 
@@ -23,20 +24,21 @@ Since automatic dump and restore is not yet supported, you can run the commands 
 
 ### dump collections
 ```shell
-node dump
+mongovc --dump
 ```
 
 ### restore collections
 ```shell
-node restore
+mongovc --restore
 ```
 
 ### specifying collections to dump/restore
 
 ```shell
-use --group <name>
+mongovc --restore <group name>
+mongovc --dump <group name>
 ```
-you can specify groups in the `config.js`
+you can specify groups in the `mongovc.config.js`
 
 if group is not specified, it will use what is indicated in `collections` 
 ## Configuration

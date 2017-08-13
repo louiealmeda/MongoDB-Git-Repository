@@ -1,0 +1,13 @@
+{
+	"database": "Test",
+	"collections": [
+		"Account"
+	],
+	"groups": {
+		"all": [],
+		"structure": [],
+		"generated": [
+			"Restaurants"
+		]
+	}
+}

@@ -1,6 +1,6 @@
 {
   "name": "mongovc",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "author": "Louie Almeda (https://github.com/louiealmeda)",
   "keywords": ["mongodb", "repository", "versioning", "collections", "git", "version", "mongo", "database"],
   "homepage": "https://github.com/louiealmeda/mongovc",
@@ -8,9 +8,10 @@
   "dependencies": {
     "colors": "^1.1.2",
     "mongodb": "^2.2.26",
-    "underscore": "^1.8.3",
+    "lodash": "4.17.4",
     "yargs": "^8.0.2"
   },
+  "bin": "./bin/mongovc.js",
   "main": "index.js",
   "scripts": {
     "dump": "node dump.js",
