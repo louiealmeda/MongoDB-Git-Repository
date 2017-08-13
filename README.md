@@ -20,7 +20,7 @@ npm install mongovc -g
 ```
 
 ## How to use
-Since automatic dump and restore is not yet supported, you can run the commands yourself.
+Since automatic dump and restore is not yet supported, you can run the commands yourself for now.
 
 ### dump collections
 ```shell
