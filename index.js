@@ -7,15 +7,14 @@ var mods = {};
 
 mods.v = {
   description: 'get the current version of mongovc',
-  call: function(){
-
-    var p = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-
-    console.log(p.version);
-
+  call: function () {
+	
+	var p = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+	
+	console.log(p.version);
+	
   }
 };
-
 
 
 mods.dump = {
@@ -35,22 +34,22 @@ Object.keys(argv).forEach(function (e) {
   succeeded = succeeded || run(e, argv);
 });
 
-if (!succeeded){
+if (!succeeded) {
   console.log('available actions:'.blue);
   Object.keys(mods).forEach(function (e) {
-    var mod = mods[e];
-    console.log('mongovc --' + e + (' ' + (mod.params || '')) + (' //' + mod.description).gray );
+	var mod = mods[e];
+	console.log('mongovc --' + e + (' ' + (mod.params || '')) + (' //' + mod.description).gray);
   })
 }
 
 function run(name, argv) {
-
-  if (!mods[name]){
-    return false;
+  
+  if (!mods[name]) {
+	return false;
   }
-
+  
   mods[name].call(argv);
   return true;
-
+  
 }
 
