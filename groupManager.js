@@ -13,7 +13,7 @@ module.exports = {
     if (config.collections.constructor !== Array)
       throw "collections must be an array of strings";
 
-    if (!name){
+    if (!name || name.constructor === Boolean){
       console.log(config.collections.join(", ").blue);
       return config.collections;
     }
@@ -27,8 +27,8 @@ module.exports = {
     if (config.groups[name].constructor !== Array)
       return "group `" + name + "` must be an array of strings";
 
-    if (config.groups[name].length == 0)
-      console.log('group `' + name + '` has no collections')
+    if (config.groups[name].length === 0)
+      console.log('group `' + name + '` has no collections');
 
     console.log(config.groups[name].join(", ").blue);
     return config.groups[name];

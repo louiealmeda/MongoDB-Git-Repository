@@ -4,16 +4,20 @@ var fs = require('fs');
 var _ = require('underscore');
 var db = require('./connection');
 var groups = require('./groupManager');
-const argv = require('yargs').argv;
 
-console.log('Restoring...'.blue);
-_.each(groups.get(argv.group), function (collection) {
+function restoreCollections(argv) {
+
+    console.log('Restoring...'.blue);
+  _.each(groups.get(argv.restore), function (collection) {
 
     dump(collection);
 
-});
+  });
 
-function dump(collection){
+}
+
+
+function restore(collection){
 
     var content = fs.readFileSync('./collections/' + collection + ".js",'utf8');
 
@@ -23,3 +27,4 @@ function dump(collection){
 
 }
 
+module.exports = restoreCollections;

@@ -5,15 +5,17 @@ var fs = require('fs');
 var _ = require('underscore');
 var db = require('./connection');
 var groups = require('./groupManager');
-const argv = require('yargs').argv;
 
+function dumpCollections(argv) {
 
-console.log('Dumping...'.blue);
-_.each(groups.get(argv.group), function (collection) {
+  console.log('Dumping...'.blue);
+  _.each(groups.get(argv.dump), function (collection) {
 
     dump(collection);
 
-});
+  });
+
+}
 
 function dump(collection){
 
@@ -32,3 +34,5 @@ function dump(collection){
 
 }
 
+
+module.exports = dumpCollections;
