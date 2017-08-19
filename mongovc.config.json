@@ -1,0 +1,13 @@
+{
+	"database": "YourDatabase",
+	"collections": [
+		"collectionName"
+	],
+	"groups": {
+		"all": [],
+		"structure": [],
+		"generated": [
+			"collectionName"
+		]
+	}
+}
