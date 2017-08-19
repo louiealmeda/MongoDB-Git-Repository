@@ -1,6 +1,6 @@
 {
   "name": "mongovc",
-  "version": "0.0.12",
+  "version": "0.0.15",
   "author": "Louie Almeda (https://github.com/louiealmeda)",
   "keywords": ["mongodb", "repository", "versioning", "collections", "git", "version", "mongo", "database"],
   "homepage": "https://github.com/louiealmeda/mongovc",
@@ -13,9 +13,5 @@
   },
   "bin": "./bin/mongovc.js",
   "main": "index.js",
-  "scripts": {
-    "dump": "node dump.js",
-    "restore": "node restore.js"
-  },
   "preferGlobal": true
 }

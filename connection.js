@@ -4,13 +4,15 @@ var colors = require('colors');
 
 var config = require('./config').get();
 
-config.host = config.host || 'localhost';
-config.port= config.port || '270171';
-
 module.exports = {
   
   connect: function(){
+ 
   
+  
+	config.host = config.host || 'localhost';
+	config.port= config.port || '27017';
+ 
 	return {
 	  execute: function (query) {
 	  

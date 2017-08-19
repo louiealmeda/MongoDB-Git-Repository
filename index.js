@@ -9,7 +9,7 @@ mods.v = {
   description: 'get the current version of mongovc',
   call: function () {
 	
-	var p = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+	var p = JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8'));
 	
 	console.log(p.version);
 	
@@ -29,7 +29,23 @@ mods.help = {
 
 mods.init = {
   description: 'initializes the folder as a mongovc project',
-  call: init
+  call: function() {
+	init.project();
+  }
+};
+
+mods['init-dev'] = {
+  description: 'creates a local development config to override mongovc.config.json, this will be automatically excluded from git',
+  call: function() {
+	init.dev();
+  }
+};
+
+mods.config = {
+  description: 'displays the resulting config that is used by mongovc',
+  call: function() {
+	console.log(JSON.stringify(config.get(true) || {},null,  '   ').green);
+  }
 };
 
 mods.dump = {

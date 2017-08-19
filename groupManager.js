@@ -1,4 +1,4 @@
-var config = require('./config').get();
+var config = require('./config').get(true);
 var colors = require('colors');
 
 
@@ -8,7 +8,7 @@ module.exports = {
 	
     if (!config)
       return false;
-    
+	
 	if (config.collections === undefined)
 	  throw "collections must be provided in " + config.path;
 	
