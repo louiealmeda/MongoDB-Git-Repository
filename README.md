@@ -78,7 +78,7 @@ mongovc --init-dev
 Same format with the main configuration. This file will override the main config's field that are specified.
 All fields in this file are optional.
 This is `.gitignored` so everyone can specify their own `database` and other configurations without conflicting with others.
-Can be automatically generated
+[Can be automatically generated](https://github.com/louiealmeda/mongovc/blob/master/README.md#initialize-dev-configuration)
 
 ## License
 
