@@ -3,6 +3,8 @@
 node module for mongodb collection version control support
 
 Source codes are versioned for the team to collaborate easily and safely. Databases needs to be given the same collaboration procedure as business logic has been increasingly dependent on data. A lot of teams dump, restore and merge their versions of databases manually. Which leads to changes not being applied and causes unexpected behaviours.
+ 
+mongovc aims to version mongodb collections properly so the need to copy-paste dumps can be obsoleted. 
 
 ### Features
 - [x] Dump MongoDB collections as a readable files
@@ -15,12 +17,19 @@ Source codes are versioned for the team to collaborate easily and safely. Databa
 
 ## Install
 
-```shell
-npm install mongovc -g
-```
+> npm install mongovc -g
+
+if this is a new project, you should `--init`  
+> mongovc --init
 
 ## How to use
 Since automatic dump and restore is not yet supported, you can run the commands yourself for now.
+
+### Help
+show everything you can do with mongovc
+```
+mongovc --help
+```
 
 ### dump collections
 ```shell
@@ -42,14 +51,13 @@ you can specify groups in the `mongovc.config.js`
 
 if group is not specified, it will use what is indicated in `collections` 
 
-### Help
-show everything you can do with mongovc
-```
-mongovc --help
+### initialize dev configuration
+```shell
+mongovc --init-dev
 ```
 
 ## Configuration
-
+> mongovc.config.js
 ```javascript
 {
   "database": "<databaseName>",
@@ -63,6 +71,14 @@ mongovc --help
   }
 }
 ```
+
+## Dev Configuration
+> dev.mongovc.config.js
+
+Same format with the main configuration. This file will override the main config's field that are specified.
+All fields in this file are optional.
+This is `.gitignored` so everyone can specify their own `database` and other configurations without conflicting with others.
+Can be automatically generated
 
 ## License
 
