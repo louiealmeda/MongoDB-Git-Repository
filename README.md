@@ -10,6 +10,7 @@ mongovc aims to version mongodb collections properly so the need to copy-paste d
 - [x] Dump MongoDB collections as a readable files
 - [x] Restore MongoDB collections from files
 - [x] Create collection groups to specify which collections should be dump or restored 
+- [ ] Specify filter per collection
 - [ ] Automatically dump collections on `stat` of git 
 - [ ] Automatically dump collections on before `pull` of git to check for conflicts
 - [ ] Automatically restore collections after pull if there are no conflicts
