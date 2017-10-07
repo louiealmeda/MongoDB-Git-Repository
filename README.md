@@ -16,9 +16,9 @@ mongovc aims to version mongodb collections properly so the need to copy-paste d
 - [ ] Automatically restore collections after pull if there are no conflicts
 - [ ] Connect with Authentication
 - [ ] Deploy to a database
- - [ ] Run scripts before deployment
- - [ ] Run scripts after deployment
- - [ ] Specify deployment profiles
+  - [ ] Run scripts before deployment
+  - [ ] Run scripts after deployment
+  - [ ] Specify deployment profiles
 
 ## Install
 
