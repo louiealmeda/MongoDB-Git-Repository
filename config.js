@@ -18,7 +18,11 @@ module.exports = {
 	  if (fs.existsSync(module.exports.devPath))
 		devConfig = JSON.parse(fs.readFileSync(module.exports.devPath, 'utf8'));
 	  
-	  return _.merge(mainConfig, devConfig);
+	  var ret = _.merge(mainConfig, devConfig);
+
+  	  ret.mongoPath = ret.mongoPath || '';
+
+	  return ret;
 	}
 	else
 	{
