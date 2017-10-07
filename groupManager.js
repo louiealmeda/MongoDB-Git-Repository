@@ -16,7 +16,7 @@ module.exports = {
 	  throw "collections must be an array of strings";
 	
 	if (!name || name.constructor === Boolean) {
-	  console.log(_.map(config.collections, function(e){return e.name || e}).join(", ").blue);
+	  console.log(_.map(config.collections, function(e){return e.name || e}).join(", ").cyan);
 	  return config.collections;
 	}
 	
@@ -32,7 +32,7 @@ module.exports = {
 	if (config.groups[name].length === 0)
 	  console.log('group `' + name + '` has no collections');
 	
-	console.log(_.map(config.groups[name], function(e){return e.name || e}).join(", ").blue);
+	console.log(_.map(config.groups[name], function(e){return e.name || e}).join(", ").cyan);
 	return config.groups[name];
 	
   }

@@ -1,6 +1,6 @@
 {
   "name": "mongovc",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "Louie Almeda (https://github.com/louiealmeda)",
   "keywords": ["mongodb", "repository", "versioning", "collections", "git", "version", "mongo", "database"],
   "homepage": "https://github.com/louiealmeda/mongovc",

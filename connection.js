@@ -24,7 +24,7 @@ module.exports = {
 		var run = spawn( path, [config.database, '--host', config.host, '--port', config.port, '--eval', query] );
 
 		if(!run.stdout){
-			console.warn("Cannot see mongo.exe, try adding `mongoPath` in your dev.config which contains the directory to your mongo executable");
+			console.warn("Cannot see mongod.exe, try adding `mongoPath` in your dev.config which should contains the directory to your mongod executable");
 			process.exit();
 		}
 
@@ -35,7 +35,8 @@ module.exports = {
 	 
 		if (ret.indexOf('[thread1] Failed to connect to ') === 0){
 		  console.warn('Cannot connect to database'.red);
-		  throw original;
+		  console.log(original);
+		  process.exit();
 		}
 	 
 		return ret;
