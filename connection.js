@@ -16,7 +16,7 @@ module.exports = {
 	  
 	  	var path = config.mongoPath + 'mongo';
 	  	console.log('running', path);
-		var run = spawn( path, [config.database, '--eval', query] );
+		var run = spawn( path, [config.database, '--host', config.host, '--port', config.port, '--eval', query] );
 
 		if(!run.stdout){
 			console.warn("Cannot see mongo.exe, try adding `mongoPath` in your dev.config which contains the directory to your mongo executable");
