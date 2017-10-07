@@ -18,7 +18,7 @@ mods.v = {
 
 mods.help = {
   call: function () {
-	console.log('available actions:'.blue);
+	console.log('available actions:'.cyan);
 	Object.keys(mods).forEach(function (e) {
 	  var mod = mods[e];
 	  console.log('mongovc --' + e + (' ' + (mod.params || '')) + (' //' + (mod.description || '') ).gray);

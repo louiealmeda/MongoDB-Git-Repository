@@ -11,11 +11,16 @@ module.exports = {
 	config.host = config.host || 'localhost';
 	config.port= config.port || '27017';
  
+	config.mongoPath = config.mongoPath.replace(/\/(mongod)?(\.exe)?\/?$/,'/');
+	
+	var path = config.mongoPath + 'mongo';
+	console.log('running', path);
+	console.log('database:'.gray, config.database);
+	console.log('    host:'.gray, config.host);
+	console.log('    port:'.gray, config.port);
 	return {
 	  execute: function (query) {
 	  
-	  	var path = config.mongoPath + 'mongo';
-	  	console.log('running', path);
 		var run = spawn( path, [config.database, '--host', config.host, '--port', config.port, '--eval', query] );
 
 		if(!run.stdout){

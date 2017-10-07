@@ -1,6 +1,6 @@
 var config = require('./config').get(true);
 var colors = require('colors');
-
+var _ = require('lodash');
 
 module.exports = {
   
@@ -16,7 +16,7 @@ module.exports = {
 	  throw "collections must be an array of strings";
 	
 	if (!name || name.constructor === Boolean) {
-	  console.log(config.collections.join(", ").blue);
+	  console.log(_.map(config.collections, function(e){return e.name || e}).join(", ").blue);
 	  return config.collections;
 	}
 	
@@ -32,7 +32,7 @@ module.exports = {
 	if (config.groups[name].length === 0)
 	  console.log('group `' + name + '` has no collections');
 	
-	console.log(config.groups[name].join(", ").blue);
+	console.log(_.map(config.groups[name], function(e){return e.name || e}).join(", ").blue);
 	return config.groups[name];
 	
   }

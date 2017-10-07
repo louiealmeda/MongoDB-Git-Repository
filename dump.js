@@ -16,7 +16,7 @@ function dumpCollections(argv) {
   
   db = db.connect();
 
-  console.log('Dumping...'.blue);
+  console.log('Dumping...'.cyan);
   _.each(collections, function (collection) {
 
     dump(collection);
@@ -27,7 +27,11 @@ function dumpCollections(argv) {
 
 function dump(collection){
 
-    var query = "printjson( db."+collection+".find().sort({_id: 1}).toArray() )";
+  	var filter = collection.filter || "{}";
+  	collection = collection.name || collection;
+  	var sort = collection.filter || "{_id: 1}";
+  	
+    var query = "printjson( db."+collection+".find("+filter+").sort("+sort+").toArray() )";
     var result = db.execute(query);
 	
     var filename = config.dumpPath + collection + ".js";

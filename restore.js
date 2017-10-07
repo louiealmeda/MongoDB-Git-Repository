@@ -15,7 +15,7 @@ function restoreCollections(argv) {
   
   db = db.connect();
   
-  console.log('Restoring...'.blue);
+  console.log('Restoring...'.cyan);
   _.each(collections, function (collection) {
 
     restore(collection);
@@ -27,6 +27,7 @@ function restoreCollections(argv) {
 
 function restore(collection){
 
+  	collection = collection.name || collection;
   	var file = config.dumpPath + collection + ".js";
   
   	if(!fs.existsSync(file)){
