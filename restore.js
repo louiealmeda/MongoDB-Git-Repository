@@ -42,8 +42,7 @@ function restore(collection){
   	db.execute("db."+collection+".remove({});");
   	
   		chunkManager.getChunks(content, function (chunk) {
-  		
-  		var result = db.execute("db."+collection+".insertMany("+chunk+")");
+  		var result = db.execute("db."+collection+".insertMany(["+chunk+"])");
   		chunks++;
 	}, 100000);
   	

@@ -34,7 +34,7 @@ function getChunks(input, callback, size) {
 	if (chunk.length === 0)
 	  break;
 	
-  	if (manager.input.length === 3){
+  	if (manager.input.length < 10){
   	  callback(chunk + "}");
 	  break;
 	}
