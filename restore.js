@@ -5,6 +5,8 @@ var _ = require('lodash');
 var db = require('./connection');
 var groups = require('./groupManager');
 var config = require('./config');
+var chunkManager = require('./chunkManager');
+
 
 function restoreCollections(argv) {
   
@@ -36,10 +38,17 @@ function restore(collection){
 	}
   	
     var content = fs.readFileSync(file,'utf8');
+  	var chunks = 0;
+  	db.execute("db."+collection+".remove({});");
+  	
+  		chunkManager.getChunks(content, function (chunk) {
+  		
+  		var result = db.execute("db."+collection+".insertMany("+chunk+")");
+  		chunks++;
+	}, 100000);
+  	
 
-    var result = db.execute("db."+collection+".remove({});" + "db."+collection+".insertMany("+content+")");
-
-    console.log(new Date().toString().gray + (' Restored ' + collection).cyan);
+    console.log(new Date().toString().gray + (' Restored ' + collection).cyan + (' chunks: ' + chunks).gray);
 
 }
 
