@@ -1,11 +1,7 @@
 {
-	"database": "Refresh2",
+	"database": "DatabaseName",
 	"collections": [
-		"CustomField",
-        {
-            "name": "Account",
-            "filter": "{ positionID : ObjectId('59266ee8abb3a947ddeeb100') }"
-        }
+		"Account"
 	],
 	"groups": {
 		"all": [],
