@@ -34,6 +34,8 @@ function dump(collection){
     var query = "printjson( db."+collection+".find("+filter+").sort("+sort+").toArray() )";
     var result = db.execute(query);
 	
+    result = "db."+collection+".insertMany("+result+");";
+    
     var filename = config.dumpPath + collection + ".js";
   
 	if (!fs.existsSync(config.dumpPath)){

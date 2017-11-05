@@ -5,7 +5,6 @@ var _ = require('lodash');
 var db = require('./connection');
 var groups = require('./groupManager');
 var config = require('./config');
-var chunkManager = require('./chunkManager');
 
 
 function restoreCollections(argv) {
@@ -16,7 +15,6 @@ function restoreCollections(argv) {
     return;
   
   db = db.connect();
-  
   console.log('Restoring...'.cyan);
   _.each(collections, function (collection) {
 
@@ -31,23 +29,16 @@ function restore(collection){
 
   	collection = collection.name || collection;
   	var file = config.dumpPath + collection + ".js";
-  
+  	
   	if(!fs.existsSync(file)){
   	  console.log(new Date().toString().gray + (' Skipped restoring ' + collection + '. collection not found').red);
   	  return;
 	}
-  	
-    var content = fs.readFileSync(file,'utf8');
-  	var chunks = 0;
+  
   	db.execute("db."+collection+".remove({});");
-  	
-  		chunkManager.getChunks(content, function (chunk) {
-  		var result = db.execute("db."+collection+".insertMany(["+chunk+"])");
-  		chunks++;
-	}, 100000);
-  	
-
-    console.log(new Date().toString().gray + (' Restored ' + collection).cyan + (' chunks: ' + chunks).gray);
+  	db.execute("load('"+file+"');");
+  
+    console.log(new Date().toString().gray + (' Restored ' + collection).cyan);
 
 }
 

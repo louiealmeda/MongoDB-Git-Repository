@@ -21,7 +21,7 @@ module.exports = {
 	  var ret = _.merge(mainConfig, devConfig);
 
   	  ret.mongoPath = ret.mongoPath || '';
-
+  	
 	  return ret;
 	}
 	else
