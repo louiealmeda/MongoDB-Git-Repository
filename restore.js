@@ -30,7 +30,7 @@ function restore(collection){
   	collection = collection.name || collection;
   	var file = config.dumpPath + collection + ".js";
   	
-  	if(!fs.existsSync(file)){
+  	if(fs.existsSync(file)){
   	  console.log(new Date().toString().gray + (' Skipped restoring ' + collection + '. collection not found').red);
   	  return;
 	}

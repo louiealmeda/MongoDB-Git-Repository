@@ -23,7 +23,12 @@ module.exports = {
   
   },
   dev: function () {
-	
+  
+	if(fs.existsSync(config.devPath)){
+	  console.log('You already have a dev config, you can edit the file '.red + config.devPath.green + ' to specify your settings'.red);
+	  return;
+	}
+ 
 	var defaults = _.clone(config.devDefaults);
 	
 	fs.writeFile(config.devPath, JSON.stringify(defaults,null,'\t'), function(err) {

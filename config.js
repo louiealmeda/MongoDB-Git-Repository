@@ -7,7 +7,7 @@ var _ = require('lodash');
 module.exports = {
   path: configPath,
   devPath: 'dev.' + configPath,
-  dumpPath: process.cwd() + '/collections/',
+  dumpPath: process.cwd().replace(/\\/g,'/') + '/collections/',
   get: function (supressWarning) {
   
 	if (fs.existsSync(configPath)){
