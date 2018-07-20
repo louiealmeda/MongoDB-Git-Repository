@@ -9,5 +9,25 @@
 		"generated": [
 			"collectionName"
 		]
-	}
+	},
+    "environments": {
+
+        "test": {
+            "ssl": true,
+            "db": "databaseName",
+            "host": "Shard/shard,shard,shard",
+            "authenticationDatabase": "admin",
+            "username": "username",
+            "password": "password"
+        },
+        "integration": {
+            "ssl": true,
+            "db": "databaseName",
+            "host": "Shard/shard,shard,shard",
+            "authenticationDatabase": "admin",
+            "username": "username",
+            "password": "password"
+        }
+
+    }
 }
